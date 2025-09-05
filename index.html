@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sistema de Base de Datos - Constructora</title>
+  <link rel="stylesheet" href="Styles/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>Sistema de Base de Datos para una Constructora</h1>
+      <p class="lead">Estructura de tablas, roles, permisos y objetivos por área</p>
+    </div>
+  </header>
+
+  <nav class="toc container" aria-label="Índice del documento">
+    <strong>Índice</strong>
+    <ul>
+      <li><a href="#clientes">Clientes</a></li>
+      <li><a href="#trabajadores">Trabajadores</a></li>
+      <li><a href="#planos">Planos</a></li>
+      <li><a href="#proveedores">Proveedores</a></li>
+      <li><a href="#finanzas">Área de Finanzas</a></li>
+      <li><a href="#legal">Área Legal</a></li>
+      <li><a href="#licencias">Permisos y Licencias</a></li>
+      <li><a href="#seguros">Seguros</a></li>
+      <li><a href="#almacen">Almacén (Materiales y Maquinaria)</a></li>
+      <li><a href="#transporte">Transporte</a></li>
+      <li><a href="#seguridad">Ingeniero en Seguridad e Higiene</a></li>
+      <li><a href="#especialistas">Ingenieros Especialistas</a></li>
+      <li><a href="#disenadores">Diseñador de Interiores / Paisajista</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+    <section id="clientes" class="card">
+      <h2>Clientes</h2>
+      <h3>Campos (tabla Clientes)</h3>
+      <ul>
+        <li>ID Cliente</li>
+        <li>Nombre</li>
+        <li>Correo</li>
+        <li>Teléfono</li>
+        <li>Dirección</li>
+        <li>Sexo</li>
+        <li>Fecha de nacimiento</li>
+        <li>Edad</li>
+      </ul>
+
+      <h3>Roles y Permisos</h3>
+      <p><strong>Supervisor:</strong> registrar, consultar y actualizar la información de los clientes para mantener control organizado y confiable.</p>
+      <p><strong>Empleado (Ingeniero Civil / Supervisor):</strong> consultar datos generales y actualizar datos de contacto únicamente.</p>
+
+      <h3>Objetivo</h3>
+      <p>Mantener un registro organizado de los clientes para un mejor seguimiento y comunicación. Garantizar que la información se mantenga actualizada y accesible.</p>
+    </section>
+
+    <section id="trabajadores" class="card">
+      <h2>Trabajadores</h2>
+      <h3>Campos (tabla Trabajadores)</h3>
+      <ul>
+        <li>ID Trabajador</li>
+        <li>Nombre</li>
+        <li>Correo</li>
+        <li>Teléfono</li>
+        <li>Dirección</li>
+        <li>Sexo</li>
+        <li>Fecha de nacimiento</li>
+        <li>Puesto</li>
+      </ul>
+
+      <h3>Roles y Permisos</h3>
+      <p><strong>Supervisor:</strong> administrar datos (registro, consulta, actualización).</p>
+      <p><strong>Empleado (Ingeniero Civil):</strong> consultar información; actualizar datos de contacto (teléfono y dirección).</p>
+
+      <h3>Objetivo</h3>
+      <p>Asegurar administración clara del personal y mantener contactos actualizados para coordinación en proyectos.</p>
+    </section>
+
+    <section id="planos" class="card">
+      <h2>Planos</h2>
+      <h3>Campos (tabla Planos)</h3>
+      <ul>
+        <li>ID Plano</li>
+        <li>Código</li>
+        <li>Calle</li>
+        <li>Número</li>
+        <li>Proyecto asociado</li>
+        <li>Encargado</li>
+      </ul>
+
+      <h3>Roles y Permisos</h3>
+      <p><strong>Arquitecto:</strong> registrar, consultar, actualizar y eliminar planos.</p>
+      <p><strong>Supervisor:</strong> registrar, consultar, actualizar y eliminar planos.</p>
+      <p><strong>Ingeniero:</strong> consultar y actualizar planos.</p>
+
+      <h3>Objetivo</h3>
+      <p>Asegurar control integral y disponibilidad de la información técnica para evitar errores en obra.</p>
+    </section>
+
+    <section id="proveedores" class="card">
+      <h2>Proveedores</h2>
+      <h3>Campos (tabla Proveedores)</h3>
+      <ul>
+        <li>ID Proveedor</li>
+        <li>Nombre</li>
+        <li>Correo</li>
+        <li>Teléfono</li>
+        <li>Dirección</li>
+        <li>Sexo</li>
+        <li>Fecha de nacimiento</li>
+        <li>Bloquear (flag)</li>
+      </ul>
+
+      <h3>Roles y Permisos</h3>
+      <p><strong>Supervisor:</strong> registrar, consultar, actualizar (correo, teléfono, dirección) y bloquear proveedores por ID.</p>
+      <p><strong>Empleado (Ingeniero):</strong> consultar y actualizar datos básicos de proveedores.</p>
+
+      <h3>Objetivo</h3>
+      <p>Garantizar control preciso de proveedores para asegurar disponibilidad de insumos y eficiencia en compras.</p>
+    </section>
+
+    <section id="finanzas" class="card">
+      <h2>Área de Finanzas</h2>
+      <h3>Campos (tabla Finanzas)</h3>
+      <ul>
+        <li>ID Registro</li>
+        <li>Responsable</li>
+        <li>Correo</li>
+        <li>Teléfono</li>
+        <li>Presupuesto asignado</li>
+        <li>Gastos</li>
+        <li>Facturas</li>
+      </ul>
+
+      <h3>Roles y Permisos</h3>
+      <p><strong>Gerente:</strong> revisar presupuestos, modificar gastos y eliminar registros obsoletos.</p>
+      <p><strong>Empleado (Contador):</strong> registrar facturas y actualizar gastos.</p>
+
+      <h3>Objetivo</h3>
+      <p>Mantener control detallado de ingresos y egresos para garantizar estabilidad financiera.</p>
+    </section>
+
+    <section id="legal" class="card">
+      <h2>Área Legal</h2>
+      <h3>Campos (tabla Legal)</h3>
+      <ul>
+        <li>ID Documento</li>
+        <li>Tipo de contrato</li>
+        <li>Cliente/Proveedor asociado</li>
+        <li>Fecha inicio</li>
+        <li>Fecha vencimiento</li>
+        <li>Estado</li>
+      </ul>
+
+      <h3>Roles y Permisos</h3>
+      <p><strong>Gerente:</strong> registrar contratos, actualizar fechas y eliminar contratos.</p>
+      <p><strong>Empleado (Abogado):</strong> consultar y actualizar estado de contratos.</p>
+
+      <h3>Objetivo</h3>
+      <p>Tener contratos y permisos actualizados para cumplir con la ley.</p>
+    </section>
+
+    <section id="licencias" class="card">
+      <h2>Permisos y Licencias</h2>
+      <h3>Campos</h3>
+      <ul>
+        <li>ID Licencia</li>
+        <li>Tipo</li>
+        <li>Fecha emisión</li>
+        <li>Fecha vencimiento</li>
+        <li>Proyecto asociado</li>
+      </ul>
+
+      <h3>Roles y Permisos</h3>
+      <p><strong>Gerente:</strong> registrar, actualizar y eliminar licencias.</p>
+      <p><strong>Empleado (Abogado):</strong> consultar y actualizar datos de licencias.</p>
+
+      <h3>Objetivo</h3>
+      <p>Garantizar que todos los proyectos cuenten con permisos vigentes.</p>
+    </section>
+
+    <section id="seguros" class="card">
+      <h2>Seguros</h2>
+      <h3>Campos</h3>
+      <ul>
+        <li>ID Seguro</li>
+        <li>Tipo (obra, personal, maquinaria)</li>
+        <li>Fecha inicio</li>
+        <li>Fecha vencimiento</li>
+        <li>Estado</li>
+      </ul>
+
+      <h3>Roles y Permisos</h3>
+      <p><strong>Gerente:</strong> registrar, actualizar y eliminar seguros.</p>
+      <p><strong>Empleado (Gerente de seguros):</strong> consultar seguros y estados.</p>
+
+      <h3>Objetivo</h3>
+      <p>Proteger a la empresa, personal y maquinaria de riesgos.</p>
+    </section>
+
+    <section id="almacen" class="card">
+      <h2>Almacén (Materiales y Maquinaria)</h2>
+      <h3>Campos</h3>
+      <ul>
+        <li>ID Producto/Maquinaria</li>
+        <li>Nombre</li>
+        <li>Tipo (material / maquinaria)</li>
+        <li>Cantidad</li>
+        <li>Estado</li>
+        <li>Ubicación</li>
+        <li>Proveedor</li>
+      </ul>
+
+      <h3>Roles y Permisos</h3>
+      <p><strong>Gerente:</strong> registrar, actualizar cantidades/estado y eliminar registros.</p>
+      <p><strong>Empleado (Supervisor / Ingeniero Civil):</strong> consultar y actualizar cantidades.</p>
+
+      <h3>Objetivo</h3>
+      <p>Controlar el inventario para evitar pérdidas y asegurar disponibilidad.</p>
+    </section>
+
+    <section id="transporte" class="card">
+      <h2>Transporte</h2>
+      <h3>Campos</h3>
+      <ul>
+        <li>ID Vehículo</li>
+        <li>Tipo</li>
+        <li>Capacidad</li>
+        <li>Estado</li>
+        <li>Responsable</li>
+        <li>Ubicación</li>
+      </ul>
+
+      <h3>Roles y Permisos</h3>
+      <p><strong>Gerente de transporte:</strong> registrar vehículos, actualizar estado y eliminar datos.</p>
+
+      <h3>Objetivo</h3>
+      <p>Administrar el uso de vehículos y maquinaria de transporte.</p>
+    </section>
+
+    <section id="seguridad" class="card">
+      <h2>Ingeniero en Seguridad e Higiene</h2>
+      <h3>Campos</h3>
+      <ul>
+        <li>ID Ingeniero</li>
+        <li>Nombre</li>
+        <li>Proyecto</li>
+        <li>Reportes de seguridad</li>
+      </ul>
+
+      <h3>Roles y Permisos</h3>
+      <p><strong>Gerente:</strong> asignar proyectos y eliminar registros.</p>
+      <p><strong>Empleado (Ingeniero de seguridad):</strong> registrar y actualizar reportes.</p>
+
+      <h3>Objetivo</h3>
+      <p>Controlar inspecciones de seguridad en la obra.</p>
+    </section>
+
+    <section id="especialistas" class="card">
+      <h2>Ingenieros Especialistas (Eléctrico, Mecánico, Hidráulico)</h2>
+      <h3>Campos</h3>
+      <ul>
+        <li>ID Ingeniero</li>
+        <li>Nombre</li>
+        <li>Especialidad</li>
+        <li>Proyecto</li>
+        <li>Contacto</li>
+      </ul>
+
+      <h3>Roles y Permisos</h3>
+      <p><strong>Supervisor:</strong> asignar proyectos y eliminar registros.</p>
+      <p><strong>Empleado (Ingeniero especialista):</strong> actualizar contacto y avances del proyecto.</p>
+
+      <h3>Objetivo</h3>
+      <p>Tener organizados a los ingenieros por especialidad para cada obra.</p>
+    </section>
+
+    <section id="disenadores" class="card">
+      <h2>Diseñador de Interiores / Paisajista</h2>
+      <h3>Campos</h3>
+      <ul>
+        <li>ID Diseñador</li>
+        <li>Nombre</li>
+        <li>Proyecto</li>
+        <li>Diseño asociado</li>
+      </ul>
+
+      <h3>Roles y Permisos</h3>
+      <p><strong>Diseñador:</strong> asignar proyectos y eliminar registros.</p>
+      <p><strong>Empleado (Diseñador):</strong> registrar y actualizar diseños.</p>
+
+      <h3>Objetivo</h3>
+      <p>Mantener diseños estéticos y paisajísticos organizados por proyecto.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Documento convertido: <em>Sistema de Base de Datos para una Constructora</em>. Fuente: archivo subido por el usuario. :contentReference[oaicite:1]{index=1}</p>
+      <p>© Constructora - Sistema de Base de Datos</p>
+    </div>
+  </footer>
+</body>
+</html>
